@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'PHCNumericTextField_Example' do
+  pod 'PHCNumericTextField', :path => '../'
+
+  target 'PHCNumericTextField_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
