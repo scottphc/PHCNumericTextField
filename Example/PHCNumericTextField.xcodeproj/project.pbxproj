@@ -21,6 +21,7 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		D240E96B1D02C96B000F3842 /* AmountKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = D240E96A1D02C96B000F3842 /* AmountKeyboardView.m */; };
 		F360676EB42204F396D86B41 /* Pods_PHCNumericTextField_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0749FB9A871B9D3419631630 /* Pods_PHCNumericTextField_Tests.framework */; };
 		F5F72BC38FFC42330587E51A /* Pods_PHCNumericTextField_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2EC62A83CEEC05F7FA17D5F /* Pods_PHCNumericTextField_Example.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,8 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B76FE73CF4B1EC68DB5E329C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C1CCAC7E4EF2CB21E1F31CE4 /* Pods-PHCNumericTextField_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PHCNumericTextField_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PHCNumericTextField_Tests/Pods-PHCNumericTextField_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		D240E9691D02C96B000F3842 /* AmountKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmountKeyboardView.h; sourceTree = "<group>"; };
+		D240E96A1D02C96B000F3842 /* AmountKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmountKeyboardView.m; sourceTree = "<group>"; };
 		E2EC62A83CEEC05F7FA17D5F /* Pods_PHCNumericTextField_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PHCNumericTextField_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -146,6 +149,8 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* PHCViewController.h */,
 				6003F5A6195388D20070C39A /* PHCViewController.m */,
+				D240E9691D02C96B000F3842 /* AmountKeyboardView.h */,
+				D240E96A1D02C96B000F3842 /* AmountKeyboardView.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -393,6 +398,7 @@
 				6003F59E195388D20070C39A /* PHCAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* PHCViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				D240E96B1D02C96B000F3842 /* AmountKeyboardView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

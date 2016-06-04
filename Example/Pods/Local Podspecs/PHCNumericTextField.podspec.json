@@ -1,0 +1,21 @@
+{
+  "name": "PHCNumericTextField",
+  "version": "0.1.0",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "summary": "A UITextField with the decimal format.",
+  "platforms": {
+    "ios": "7.0"
+  },
+  "homepage": "https://github.com/scottphc/PHCNumericTextField",
+  "authors": {
+    "Scott Chou": "scott.ph.chou@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/scottphc/PHCNumericTextField.git",
+    "tag": "0.1.0"
+  },
+  "source_files": "PHCNumericTextField/**/*"
+}

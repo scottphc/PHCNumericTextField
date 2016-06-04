@@ -7,8 +7,12 @@
 //
 
 #import "PHCViewController.h"
+#import <PHCNumericTextField/PHCNumericTextField.h>
+#import "AmountKeyboardView.h"
 
 @interface PHCViewController ()
+
+@property (weak, nonatomic) IBOutlet PHCNumericTextField *numberTextField;
 
 @end
 
@@ -17,13 +21,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    AmountKeyboardView *keyboardView = [[AmountKeyboardView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    self.numberTextField.inputView = keyboardView;
+    keyboardView.textField = self.numberTextField;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

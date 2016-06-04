@@ -1,0 +1,16 @@
+PODS:
+  - PHCNumericTextField (0.1.0)
+
+DEPENDENCIES:
+  - PHCNumericTextField (from `../`)
+
+EXTERNAL SOURCES:
+  PHCNumericTextField:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  PHCNumericTextField: 4e180808f47296510e655e99563b273e1648c45b
+
+PODFILE CHECKSUM: f1d694f979aaab0dafeaa1b7c8335ec9ae943917
+
+COCOAPODS: 1.0.0
