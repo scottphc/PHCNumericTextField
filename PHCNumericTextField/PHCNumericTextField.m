@@ -31,7 +31,7 @@
     NSInteger groupingSeparatorCount = [self countOfGroupingSeparatorInRange:NSMakeRange(0, cursorStart)];
     NSInteger numberCount = cursorStart - groupingSeparatorCount;
     
-    super.text = [self formattedTextFrom:super.text];
+    super.attributedText = [self formattedTextFrom:super.text];
     
     __block NSInteger currentNumberCount = 0;
     __block NSInteger newCursorStart = 0;
@@ -50,7 +50,7 @@
     self.selectedTextRange = [self textRangeFromPosition:newCursorStartPosition toPosition:newCursorStartPosition];
 }
 
-- (NSString *)formattedTextFrom:(NSString *)text {
+- (NSAttributedString *)formattedTextFrom:(NSString *)text {
     NSString *formattedText;
     NSNumber *numberText = [self.numberFormatter numberFromString:text];
     
@@ -59,7 +59,19 @@
     } else
         formattedText = [self.numberFormatter stringFromNumber:numberText];
     
-    return formattedText;
+    if (formattedText == nil) {
+        return nil;
+    }
+    
+    NSRange pointRange = [formattedText rangeOfString:self.numberFormatter.decimalSeparator];
+    if (pointRange.location == NSNotFound) {
+        return [[NSAttributedString alloc] initWithString:formattedText];
+    } else {
+        NSMutableAttributedString *attrFormattedText = [[NSMutableAttributedString alloc] initWithString:formattedText];
+        UIFont *smallFont = [self.font fontWithSize:self.font.pointSize*0.75f];
+        [attrFormattedText setAttributes:@{NSFontAttributeName: smallFont} range:NSMakeRange(pointRange.location, formattedText.length - pointRange.location)];
+        return attrFormattedText;
+    }
 }
 
 - (NSInteger)countOfGroupingSeparatorInRange:(NSRange)range {
@@ -76,7 +88,7 @@
 #pragma mark - Override Methods
 
 - (void)setText:(NSString *)text {
-    super.text = [self formattedTextFrom:text];
+    super.attributedText = [self formattedTextFrom:text];
 }
 
 - (void)insertText:(NSString *)text {
