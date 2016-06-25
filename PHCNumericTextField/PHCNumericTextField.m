@@ -52,12 +52,15 @@
 
 - (NSAttributedString *)formattedTextFrom:(NSString *)text {
     NSString *formattedText;
-    NSNumber *numberText = [self.numberFormatter numberFromString:text];
     
-    if ([text hasSuffix:self.numberFormatter.decimalSeparator]) {
-        formattedText = [[self.numberFormatter stringFromNumber:numberText] stringByAppendingString:self.numberFormatter.decimalSeparator];
-    } else
+    NSRange range = [text rangeOfString:self.numberFormatter.decimalSeparator];
+    if (range.location != NSNotFound) {
+        NSNumber *numberText = [self.numberFormatter numberFromString:[text substringToIndex:range.location]];
+        formattedText = [[self.numberFormatter stringFromNumber:numberText] stringByAppendingString:[text substringFromIndex:range.location]];
+    } else {
+        NSNumber *numberText = [self.numberFormatter numberFromString:text];
         formattedText = [self.numberFormatter stringFromNumber:numberText];
+    }
     
     if (formattedText == nil) {
         return nil;

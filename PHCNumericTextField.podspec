@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PHCNumericTextField'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.summary          = 'A UITextField with the decimal format.'
   s.ios.deployment_target = '7.0'
