@@ -10,11 +10,21 @@
 
 @interface PHCNumericTextField ()
 
+@property (strong, nonatomic) UIFont *originalFont;
 @property (strong, nonatomic) NSNumberFormatter *numberFormatter;
 
 @end
 
 @implementation PHCNumericTextField
+
+- (void)awakeFromNib {
+    self.originalFont = self.font;
+}
+
+- (void)setFont:(UIFont *)font {
+    [super setFont:font];
+    self.originalFont = font;
+}
 
 - (void)setMinimumFractionDigits:(NSInteger)minimumFractionDigits {
     self.numberFormatter.minimumFractionDigits = minimumFractionDigits;
@@ -31,7 +41,8 @@
     NSInteger groupingSeparatorCount = [self countOfGroupingSeparatorInRange:NSMakeRange(0, cursorStart)];
     NSInteger numberCount = cursorStart - groupingSeparatorCount;
     
-    super.attributedText = [self formattedTextFrom:super.text];
+    self.font = self.originalFont;
+    self.attributedText = [self formattedTextFrom:super.text];
     
     __block NSInteger currentNumberCount = 0;
     __block NSInteger newCursorStart = 0;
@@ -91,7 +102,8 @@
 #pragma mark - Override Methods
 
 - (void)setText:(NSString *)text {
-    super.attributedText = [self formattedTextFrom:text];
+    self.font = self.originalFont;
+    self.attributedText = [self formattedTextFrom:text];
 }
 
 - (void)insertText:(NSString *)text {
