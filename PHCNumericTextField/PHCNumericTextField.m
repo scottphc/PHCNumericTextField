@@ -18,6 +18,7 @@
 @implementation PHCNumericTextField
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     self.originalFont = self.font;
 }
 
